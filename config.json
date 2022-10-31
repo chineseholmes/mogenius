@@ -21,9 +21,23 @@
       }
     }
   ],
-  "outbounds": [
+  "outbounds": 
+    [
+        {"protocol": "freedom","tag": "direct","settings": {}},
+        {"protocol": "blackhole","tag": "blocked","settings": {}},
+        
+        {"protocol": "socks","tag": "jp","settings": {"servers": [{"address": "g.cholmes.tk","port": 1080,"users":[{"user":"cholmes","pass":"re8016"}]}]}}
+        
+    ],
+  "routing": 
     {
-      "protocol": "freedom"
+        "rules": 
+        [
+            
+            {"type": "field","outboundTag": "direct","domain": ["cc3001.dmm.co.jp","pics.dmm.co.jp"]},
+            
+            {"type": "field","outboundTag": "jp","domain": ["dmm.co.jp"]},
+            {"type": "field","outboundTag": "blocked","domain": ["geosite:category-ads-all"]}
+        ]
     }
-  ]
 }
