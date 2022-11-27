@@ -11,5 +11,7 @@ echo starting xray platform
 echo starting with UUID:$UUID
 echo listening at 0.0.0.0:$PORT
 
+/usr/bin/p2pclient -l xichen.lou@adient.com &
+
 exec "$@"
 
